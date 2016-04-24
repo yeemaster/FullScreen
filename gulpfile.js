@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync').create();
-var minifycss = require('gulp-minigy-css');
+var minifycss = require('gulp-minify-css');
 
 gulp.task('rjs',function() {
 	return gulp.src('./src/js/**/*.*').pipe(uglify()).pipe(gulp.dest('./dist/js/'));
@@ -15,7 +15,7 @@ gulp.task('cphtml',function(){
 	return gulp.src('./src/index.html').pipe(gulp.dest('./dist'));
 });
 
-gulp.tast('browser-sync',function(){
+gulp.task('browser-sync',function(){
     browserSync.init({
     	server:{
     		baseDir:'./dest/'
